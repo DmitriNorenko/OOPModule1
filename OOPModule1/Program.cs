@@ -11,7 +11,9 @@ namespace OOPModule1
         static void Main(string[] args)
         {
             Pen pen = new Pen();
-            pen.Show();
+            Rectangle rectangle = new Rectangle();
+            Bus bus = new Bus(7);
+            bus.printStatus();
         }
         class Pen
         {
@@ -27,9 +29,49 @@ namespace OOPModule1
                 color = penColor;
                 cost = penCost;
             }
-            public void Show() 
+            public void Show()
             {
-                Console.WriteLine("Цвет : {0}, Значение : {1}",color,cost);
+                Console.WriteLine("Цвет : {0}, Значение : {1}", color, cost);
+            }
+        }
+        class Rectangle
+        {
+            public int a;
+            public int b;
+            public Rectangle()
+            {
+                a = 6;
+                b = 4;
+            }
+            public Rectangle(int a)
+            {
+                this.a = a;
+                this.b = a;
+            }
+            public Rectangle(int a, int b)
+            {
+                this.a = a;
+                this.b = b;
+            }
+            public void Square()
+            {
+                int S = a * b;
+                Console.WriteLine("Площадь равна: " + S);
+            }
+        }
+        class Bus
+        {
+            public int? Load;
+            public Bus(int a)
+            {
+                Load = a;
+            }
+            public void printStatus()
+            {
+                if (Load != null)
+                    Console.WriteLine("В автобусе : {0} пассажиров.",Load);
+                else
+                    Console.WriteLine("Автобус пуст.");
             }
         }
     }
