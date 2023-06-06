@@ -13,6 +13,7 @@ namespace OOPModule1
             Pen pen = new Pen();
             Rectangle rectangle = new Rectangle();
             Bus bus = new Bus(7);
+
             bus.printStatus();
         }
         class Pen
@@ -69,9 +70,43 @@ namespace OOPModule1
             public void printStatus()
             {
                 if (Load != null)
-                    Console.WriteLine("В автобусе : {0} пассажиров.",Load);
+                    Console.WriteLine("В автобусе : {0} пассажиров.", Load);
                 else
                     Console.WriteLine("Автобус пуст.");
+            }
+        }
+        class circle
+        {
+            public int radius;
+            public void CircumferenceLengths()
+            {
+
+            }
+        }
+        class triangle
+        {
+            public int a, b, c;
+
+            public void Perimeter()
+            {
+
+            }
+            public void Square()
+            {
+
+            }
+        }
+        class Cube
+        {
+            public int a, b, c;
+
+            public void Perimeter()
+            {
+
+            }
+            public void Square()
+            {
+
             }
         }
     }
