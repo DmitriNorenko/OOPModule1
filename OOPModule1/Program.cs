@@ -10,11 +10,8 @@ namespace OOPModule1
     {
         static void Main(string[] args)
         {
-            Pen pen = new Pen();
-            Rectangle rectangle = new Rectangle();
-            Bus bus = new Bus(7);
-
-            bus.printStatus();
+            User user = new User("Dmitry", "Dmitry@gmail.com");
+            user.Show();
         }
         class Pen
         {
@@ -121,6 +118,48 @@ namespace OOPModule1
                 Console.WriteLine(color);
             }
         }
-
+        class User
+        {
+            private string login;
+            private string email;
+            public User(string log,string eml)
+            {
+                Login = log;
+                Email = eml;
+            }
+            public string Email
+            {
+                get { return email; }
+                set
+                {
+                    for (int i = 0; i < value.Length; i++)
+                    {
+                        if (value[i] == '@')
+                        {
+                            email = value;
+                        }
+                    }
+                }
+            }
+            public string Login
+            {
+                get { return login; }
+                set
+                {
+                    if (value.Length > 3)
+                    {
+                        login = value;
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Вы ввели короткий логин.Не меньше 3 символов.");
+                    }
+                }
+            }
+            public void Show()
+            {
+                Console.WriteLine("\n Ваш логин: {0} \n Ваша почта: {1}",login,email);
+            }
+        }
     }
 }
