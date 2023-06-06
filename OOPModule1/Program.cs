@@ -109,5 +109,18 @@ namespace OOPModule1
 
             }
         }
+        class TrafficLight
+        {
+            private string color;
+            private void ChangeColor(string Color)
+            {
+                color = Color;
+            }
+            public void GetColor()
+            {
+                Console.WriteLine(color);
+            }
+        }
+
     }
 }
